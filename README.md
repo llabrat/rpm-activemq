@@ -1,16 +1,10 @@
-rpm-activemq
-============
+# rpm-activemq
 
-An RPM spec file to build and install the Apache ActiveMQ open source message broker.
+An RPM spec file to install the is Apache ActiveMQ open source message broker.
 
-To build:
- 
-`sudo yum -y install rpmdevtools && rpmdev-setuptree`
- 
-`wget https://raw.github.com/nmilford/rpm-activemq/master/activemq.spec -O ~/rpmbuild/SPECS/activemq.spec`
+To Build:
 
-`wget http://apache.claz.org/activemq/apache-activemq/5.9.0/apache-activemq-5.9.0-bin.zip  -O ~/rpmbuild/SOURCES/apache-activemq-5.9.0-bin.zip`
+    sudo yum -y groupinstall "Development Tools"
+    wget -P ~/rpmbuild/SOURCES/ http://mirror.ox.ac.uk/sites/rsync.apache.org/activemq/5.11.1/apache-activemq-5.11.1-bin.tar.gz
+    rpmbuild -bb  ~/rpmbuild/SPECS/activemq.spec --define "release 1"
 
-`wget https://raw.github.com/nmilford/rpm-activemq/master/activemq.init -O ~/rpmbuild/SOURCES/activemq.init`
- 
-`rpmbuild -bb ~/rpmbuild/SPECS/activemq.spec`
