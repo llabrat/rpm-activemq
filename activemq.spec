@@ -25,6 +25,7 @@ Source1: activemq.init
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: noarch
 Packager: Nick Byrne <nick@incension.com>
+Requires: java
 
 %description
 ApacheMQ is a JMS Compliant Messaging System
